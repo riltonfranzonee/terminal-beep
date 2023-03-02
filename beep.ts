@@ -18,7 +18,9 @@ process.stdin.on("data", buffer => {
   }
 
   while (number > 0) {
-    process.stdout.write('\x07');
+    setTimeout(() => {
+      process.stdout.write('\x07');
+    }, 500 * number);
     number--;
   }
 
